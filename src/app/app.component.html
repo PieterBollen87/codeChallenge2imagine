@@ -1,0 +1,11 @@
+
+<div>
+  <h1> {{title}}</h1>
+  Locatie: <input type='Text' [value]="myLocation" (input)="myLocation = $event.target.value">
+  <button name="mybutton" value="get clothes to wear" (click)="getClothing()" id="weatherButton">Get ClothingType</button>
+
+  <div *ngIf="clothingItem">
+    {{clothingItem.name}}
+  </div>
+</div>
+
