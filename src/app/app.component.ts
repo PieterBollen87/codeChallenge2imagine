@@ -25,12 +25,14 @@ export class AppComponent  implements OnInit{
   temperatureType: TemperatureType
   myLocation: string;
   myTemp: string;
+  dateOftoday: Date;
 
   constructor(private cd: ChangeDetectorRef, private weatherService : weatherService, private  clothingService: clothingService) {
     this.myLocation = 'Hasselt';
     this.myTemp= '55';
     this.blueval = 255;
     this.redval = 100;
+    this.dateOftoday = new Date();
   }
 
 ngOnInit(){

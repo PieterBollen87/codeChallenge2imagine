@@ -2,6 +2,8 @@
 <div [ngStyle]="{'background-color': 'rgb('
 +this.getColor(this.weather).redval+','+this.getColor(this.weather).greenval+','+this.getColor(this.weather).blueval+')'}">
   <h1> {{title}}</h1>
+  <div class="dateClass">today's date : {{dateOftoday | date: 'dd/MMM/yyyy'}}</div>
+  <br/>
   Locatie: <input type='Text' [value]="myLocation" (input)="myLocation = $event.target.value">
   <button name="mybutton" value="get clothes to wear" (click)="getClothing()" id="weatherButton">Get ClothingType</button>
  temperatuur: <input type='Number' [value]="myTemp" (input)="myTemp = $event.target.value">
