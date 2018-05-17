@@ -4,8 +4,9 @@
 import {Injectable} from '@angular/core';
 import 'rxjs/add/operator/map';
 import {Observable} from 'rxjs/Observable';
-import {ClothingItem} from '../model/ClothingItem';
+import {ClothingItem} from '../model/clothingmodels/ClothingItem';
 import {WeatherType} from '../model/WeatherType';
+import {weatherModel} from "../model/weatherModel";
 
 @Injectable()
 export class clothingService {
@@ -29,10 +30,10 @@ export class clothingService {
 
 
 
-  getClothingAccordingToWeather(weatherType: WeatherType): ClothingItem {
+  getClothingAccordingToWeather(weatherModel: weatherModel): ClothingItem {
     let temp;
    this.clothingItemsAvailable.forEach(function (clothItem) {
-     if (clothItem.weatherType === weatherType) {
+     if (clothItem.weatherType === weatherModel.main) {
        temp = clothItem;
      }
    });
